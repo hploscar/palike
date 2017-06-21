@@ -4,8 +4,8 @@ defmodule Palike.Web.UserControllerTest do
   alias Palike.Accounts
   alias Palike.Accounts.User
 
-  @create_attrs %{email: "some email"}
-  @update_attrs %{email: "some updated email"}
+  @create_attrs %{email: "oscar@palike.com", username: "Oscar"}
+  @update_attrs %{email: "admin@palike.com", username: "Administrator"}
   @invalid_attrs %{email: nil}
 
   def fixture(:user) do
@@ -29,7 +29,9 @@ defmodule Palike.Web.UserControllerTest do
     conn = get conn, user_path(conn, :show, id)
     assert json_response(conn, 200)["data"] == %{
       "id" => id,
-      "email" => "some email"}
+      "email" => "oscar@palike.com",
+      "username" => "Oscar"
+    }
   end
 
   test "does not create user and renders errors when data is invalid", %{conn: conn} do
@@ -45,7 +47,9 @@ defmodule Palike.Web.UserControllerTest do
     conn = get conn, user_path(conn, :show, id)
     assert json_response(conn, 200)["data"] == %{
       "id" => id,
-      "email" => "some updated email"}
+      "email" => "admin@palike.com",
+      "username" => "Administrator"
+    }
   end
 
   test "does not update chosen user and renders errors when data is invalid", %{conn: conn} do

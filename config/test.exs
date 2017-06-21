@@ -14,6 +14,6 @@ config :palike, Palike.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "toriyama",
   password: "toriyama",
-  database: "palikeapi_test",
+  database: "palike-api_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

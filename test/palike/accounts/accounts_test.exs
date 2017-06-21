@@ -6,8 +6,8 @@ defmodule Palike.AccountsTest do
   describe "users" do
     alias Palike.Accounts.User
 
-    @valid_attrs %{email: "some email"}
-    @update_attrs %{email: "some updated email"}
+    @valid_attrs %{email: "oscar@palike.com", username: "Oscar"}
+    @update_attrs %{email: "administrator@palike.com", username: "Administrator"}
     @invalid_attrs %{email: nil}
 
     def user_fixture(attrs \\ %{}) do
@@ -31,7 +31,7 @@ defmodule Palike.AccountsTest do
 
     test "create_user/1 with valid data creates a user" do
       assert {:ok, %User{} = user} = Accounts.create_user(@valid_attrs)
-      assert user.email == "some email"
+      assert user.email == "oscar@palike.com"
     end
 
     test "create_user/1 with invalid data returns error changeset" do
@@ -42,7 +42,7 @@ defmodule Palike.AccountsTest do
       user = user_fixture()
       assert {:ok, user} = Accounts.update_user(user, @update_attrs)
       assert %User{} = user
-      assert user.email == "some updated email"
+      assert user.email == "administrator@palike.com"
     end
 
     test "update_user/2 with invalid data returns error changeset" do

@@ -6,6 +6,7 @@ defmodule Palike.Accounts.User do
 
   schema "accounts_users" do
     field :email, :string
+    field :username, :string
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule Palike.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:email])
-    |> validate_required([:email])
+    |> cast(attrs, [:email, :username])
+    |> validate_required([:email, :username])
   end
 end
