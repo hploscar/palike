@@ -1,11 +1,11 @@
 # App artifacts
-/_build
-/db
-/deps
-/*.ez
+/backend/_build
+/backend/db
+/backend/deps
+/backend/*.ez
 
 # Generated on crash by the VM
-erl_crash.dump
+/backend/erl_crash.dump
 
 # Files matching config/*.secret.exs pattern contain sensitive
 # data and you should not commit them into version control.
@@ -13,4 +13,22 @@ erl_crash.dump
 # Alternatively, you may comment the line below and commit the
 # secrets files as long as you replace their contents by environment
 # variables.
-/config/*.secret.exs
+/backend/config/*.secret.exs
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/palike/dist
+/palike/tmp
+
+# dependencies
+/palike/node_modules
+/palike/bower_components
+
+# misc
+/palike/.sass-cache
+/palike/connect.lock
+/palike/coverage/*
+/palike/libpeerconnection.log
+/palike/npm-debug.log*
+/palike/testem.log
