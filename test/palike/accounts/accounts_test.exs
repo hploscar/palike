@@ -6,8 +6,8 @@ defmodule Palike.AccountsTest do
   describe "users" do
     alias Palike.Accounts.User
 
-    @valid_attrs %{email: "oscar@palike.com", username: "Oscar"}
-    @update_attrs %{email: "administrator@palike.com", username: "Administrator"}
+    @valid_attrs %{email: "oscar@palike.com", username: "Oscar", password: "s3cr3t"}
+    @update_attrs %{email: "administrator@palike.com", username: "Administrator", password: "s3cr3t3r"}
     @invalid_attrs %{email: nil}
 
     def user_fixture(attrs \\ %{}) do
@@ -15,7 +15,6 @@ defmodule Palike.AccountsTest do
         attrs
         |> Enum.into(@valid_attrs)
         |> Accounts.create_user()
-
       user
     end
 
