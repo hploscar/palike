@@ -8,6 +8,9 @@ defmodule Palike.Web.Router do
   scope "/api", Palike.Web do
     pipe_through :api
 
-    resources "/users", UserController
+    scope "v1" do
+      # post "/registrations", RegistrationController, :create
+      resources "/users", UserController
+    end
   end
 end
