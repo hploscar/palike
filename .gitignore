@@ -32,3 +32,4 @@
 /palike/libpeerconnection.log
 /palike/npm-debug.log*
 /palike/testem.log
+/palike/package-lock.json
