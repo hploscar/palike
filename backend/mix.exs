@@ -34,6 +34,7 @@ defmodule Palike.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:comeonin, "~> 3.0"},
+     {:cors_plug, "~> 1.2"},
      {:cowboy, "~> 1.0"},
      {:guardian, "~> 0.14"}]
   end

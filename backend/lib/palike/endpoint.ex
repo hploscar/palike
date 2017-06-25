@@ -36,5 +36,9 @@ defmodule Palike.Endpoint do
     key: "_palike_key",
     signing_salt: "3MfxAzgT"
 
+  plug CORSPlug,
+    origin: ["http://localhost:4200"],
+    methods: ["GET", "POST"]
+
   plug Palike.Router
 end

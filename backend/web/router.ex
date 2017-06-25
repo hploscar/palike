@@ -15,7 +15,7 @@ defmodule Palike.Router do
 
       post "/sessions", SessionController, :create
       delete "/sessions", SessionController, :delete
-
+      options "/sessions", SessionController, :options
       get "/me", MeController, :show
     end
   end
