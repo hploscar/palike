@@ -1,0 +1,25 @@
+<div class="ui grid">
+  <div class="three column row">
+  </div>
+  <div class="three column row">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+      <div class="ui segment">
+        <form class="ui form" {{action 'authenticate' on='submit'}}>
+          <div class="field">
+            <label for="identification">Login</label>
+            {{input id='identification' placeholder='Enter Login' value=identification}}
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            {{input id='password' placeholder='Enter Password' type='password' value=password}}
+          </div>
+          <div class="field">
+            <button class="ui primary button" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="four wide column"></div>
+  </div>
+</div>
