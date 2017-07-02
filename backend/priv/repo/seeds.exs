@@ -16,6 +16,11 @@ alias Palike.{Repo, User}
     username: "palike",
     email: "palike@palike.com",
     password: "qwertyui"
+  },
+  %{
+    username: "akila",
+    email: "akila@palike.com",
+    password: "qwertyui"
   }
 ]
 |> Enum.map(&User.changeset(%User{}, &1))
