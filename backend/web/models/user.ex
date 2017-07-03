@@ -19,7 +19,7 @@ defmodule Palike.User do
     struct
     |> cast(params, [:username, :email, :password])
     |> validate_required([:username, :email])
-    |> validate_confirmation(:password, message: "Password does not match")
+    # |> validate_confirmation(:password, message: "Password does not match")
     |> unique_constraint(:email, message: "Email already taken")
     |> generate_encrypted_password
   end

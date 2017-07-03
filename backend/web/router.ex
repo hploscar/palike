@@ -12,7 +12,7 @@ defmodule Palike.Router do
 
     scope "/v1" do
       post "/registrations", RegistrationController, :create
-
+      options "/registrations", RegistrationController, :options
       post "/sessions", SessionController, :create
       delete "/sessions", SessionController, :delete
       options "/sessions", SessionController, :options

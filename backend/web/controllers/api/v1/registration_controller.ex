@@ -3,10 +3,10 @@ defmodule Palike.RegistrationController  do
 
   alias Palike.{Repo, User}
 
-  plug :scrub_params, "user" when action in [:create]
+  plug :scrub_params, "data" when action in [:create]
 
-  def create(conn, %{"user" => user_params}) do
-    changeset = User.changeset(%User{}, user_params)
+  def create(conn, %{"data" => user_params}) do
+    changeset = User.changeset(%User{}, user_params["attributes"])
 
     case Repo.insert(changeset) do
       {:ok, user} ->
@@ -14,12 +14,12 @@ defmodule Palike.RegistrationController  do
 
         conn
         |> put_status(:created)
-        |> render(Palike.SessionView, "show.json", jwt: jwt, user: user)
+        |> render(Palike.RegistrationView, "show.json", jwt: jwt, user: user)
 
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Palike.RegistrationView, "error.json", changeset: changeset)
+        |> render(Palike.RegistrationView, "error.json", error: changeset.errors)
     end
   end
 end

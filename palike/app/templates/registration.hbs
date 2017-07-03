@@ -7,8 +7,12 @@
       <div class="ui segment">
         <form class="ui form" {{action 'registration' on='submit'}}>
           <div class="field">
-            <label for="identification">Type email identification</label>
-            {{input id='identification' placeholder='Enter Login' value=identification}}
+            <label for="email">Username</label>
+            {{input id='username' placeholder='Enter Login' value=username}}
+          </div>
+          <div class="field">
+            <label for="email">Type email identification</label>
+            {{input id='email' placeholder='Enter email' value=email}}
           </div>
           <div class="field">
             <label for="password">Password</label>
